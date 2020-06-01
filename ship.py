@@ -32,3 +32,6 @@ class Ship():  # инифиализирует корабль и задает е�
         self.rect.centerx = self.center 
         self.rect.bottom = self.ycenter
 
+    def center_ship(self):
+    	self.center = self.screen_rect.centerx
+    	self.ycenter = self.screen_rect.bottom
