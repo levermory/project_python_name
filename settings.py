@@ -10,3 +10,7 @@ class Settings():  # класс для хранения настроек игр�
         self.bullet_height = 17
         self.bullet_color = 255, 36, 0
         self.bullets_allowed = 5
+
+        self.alien_speed_factor = 1
+        self.fleet_drop_speed = 10
+        self.fleet_direction = 1  # движение вправо 
