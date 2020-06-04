@@ -8,7 +8,7 @@ from pygame.sprite import Group
 from game_stats import GameStats
 from button import Button
 from scoreboard import Scoreboard
-
+from client import update_score
 
 def run_game():
     # Инициализирует игру и создает объект экрана.
@@ -31,11 +31,11 @@ def run_game():
     while True:
         gf.check_events(ai_settings, screen, stats, sb, play_button, ship, aliens, bullets)  # Отслеживание событий клавиатуры и мыши.
         if ship.pause_flag == -1:
-            if stats.game_active:
-                ship.update()
-                gf.update_bullets(ai_settings, screen, stats, sb, ship, aliens, bullets)
-                gf.update_aliens(ai_settings, stats, screen, sb, ship, aliens, bullets)
-            gf.update_screen(ai_settings, screen, stats, sb, ship, aliens, bullets, play_button, background_image)  # обновление экрана
+        	if stats.game_active:
+        	    ship.update()
+        	    gf.update_bullets(ai_settings, screen, stats, sb, ship, aliens, bullets)
+        	    gf.update_aliens(ai_settings, stats, screen, sb, ship, aliens, bullets)
+        	gf.update_screen(ai_settings, screen, stats, sb, ship, aliens, bullets, play_button, background_image)  # обновление экрана
         else:
-            gf.update_screen(ai_settings, screen, stats, sb, ship, aliens, bullets, play_button, background_image)  # обновление экрана
+        	gf.update_screen(ai_settings, screen, stats, sb, ship, aliens, bullets, play_button, background_image)  # обновление экрана
 run_game()

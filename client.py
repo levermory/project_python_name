@@ -29,5 +29,3 @@ def update_score(score):
     data[nick] = score
     send = json.dumps(data)
     requests.post('http://127.0.0.1:8888', json=send)
-
-update_score(500)
